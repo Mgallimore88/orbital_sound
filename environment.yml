@@ -30,6 +30,7 @@ dependencies:
   - pip:
     - cffi==1.12.3
     - pycparser==2.19
+    - simpleaudio==1.0.2
     - soundcard==0.3.2
 prefix: /home/mike/miniconda3/envs/orbital_sound
 
