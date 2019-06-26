@@ -51,6 +51,7 @@ try
 
 conda activate orbital_sound
 
-
-
+--Exporting a conda environment as a .yml --
+conda env export > environment.yml
+--------------------------------------------
 
