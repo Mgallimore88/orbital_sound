@@ -34,8 +34,9 @@ for this reason, it is useful to set up conda environments with pip installed. s
 conda create -n myenv pip numpy
 
 this would create a new conda env with name myenv, and the pip and numpy packages. The python installation will be the latest available unless specified. check from within the env.
+
 Note: if you are in root/base environment, pip will install python2 packages whereas pip3 will install python3 based ones. 
-However, if a conda environment is created with python3 as the default, pip will install python3 packages.
+However, if a conda environment is created with python3 as the default, pip will install python3 packages. Strange bug: when installing from the VSCode embedded terminal, my version of pip is python2.7 but the in the system terminal it shows python3 for the same environmen. Workaround: install packages using system terminal. 
 
 conda activate myenv
 python --version
