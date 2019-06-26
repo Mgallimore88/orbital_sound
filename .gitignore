@@ -1,0 +1,6 @@
+
+# ignore any pycache files
+*.pyc
+
+# ignore vscode config folder
+.vscode/
