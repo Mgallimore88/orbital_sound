@@ -47,11 +47,16 @@ conda info --envs
 
 but we are using .yml file to share the environment. The name of the environment is the 1st line of the.yml file, in this case orbital_sound
 
-try 
+===========================================
+--Loading an environment from a .yml:--
+from within the project directory, type
 
+conda env create -f environment.yml
 conda activate orbital_sound
 
---Exporting a conda environment as a .yml --
-conda env export > environment.yml
 --------------------------------------------
+--Exporting a conda environment as a .yml --
+
+conda env export > environment.yml
+===========================================
 
