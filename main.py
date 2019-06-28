@@ -6,4 +6,4 @@ y.soundcard_play()
 
 z = SinGen(300)
 z.make_sin()
-z.sounddevice_play()
+z.soundcard_play()

@@ -31,6 +31,5 @@ dependencies:
     - cffi==1.12.3
     - pycparser==2.19
     - soundcard==0.3.2
-    - sounddevice==0.3.13
 prefix: /home/mike/miniconda3/envs/orbital_sound
 

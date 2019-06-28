@@ -1,35 +1,29 @@
-import sounddevice as sd
 import numpy as np
-import math
 import soundcard as sc
 
 
 class SinGen:
     def __init__(self, frequency=500):
-        self.sin_frequency = frequency                      # Hz
+        self.wave_frequency = frequency                     # Hz
         self.sample_frequency = 44100                       # Hz
         self.sampling_interval = 1 / self.sample_frequency  # secs
-        self.length_secs = 1
+        self.length_secs = 0.5
         self. num_of_samples = round(self.sample_frequency * self.length_secs)
 
     def make_sin(self):
-        self.time = 0
-        self.sample_array = [0] * self.num_of_samples
-
-        for n in range(self.num_of_samples):
-            self.sample_array[n] = math.sin(2 * math.pi * self.sin_frequency *
-                                            self.time)
-            self.time += self.sampling_interval
-        self.numpy_sin_array = np.array(self.sample_array)
-        print(self.numpy_sin_array)
-
-    def sounddevice_play(self):
-        sd.play(self.sample_array, self.sample_frequency)
-        sd.wait()
+        self.time_array = np.linspace(0, self.length_secs, self.num_of_samples)
+        self.waveform = np.sin(2 * np.pi * self.wave_frequency
+                               * self.time_array)
+        # # Debug
+        # print(f'Waveform {self.waveform}')
+        # print(f'array size error = {self.num_of_samples - self.time_array.size} samples')
+        # print(f'sampling interval = {self.sampling_interval} secs')
+        # print(f'2nd val in numpy array = {self.time_array[1]} secs')
+        # print(f'sampling interval error = {self.sampling_interval - self.time_array[1]} secs')
 
     def soundcard_play(self):
         speaker = sc.default_speaker()
-        speaker.play(self.numpy_sin_array/np.max(self.numpy_sin_array),
+        speaker.play(self.waveform/np.max(self.waveform),
                      samplerate=self.sample_frequency)
 
 
